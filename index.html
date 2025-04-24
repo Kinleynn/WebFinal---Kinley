@@ -80,26 +80,57 @@
             </div>
         </section>
  <!-- Portfolio Grid-->
-<section class="page-section bg-light" id="creative">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Creative Zone</h2>
-            <a href="scratch.html">Hobbies</a>
-        </div>
-    </div>
-</section>
+        <section class="page-section bg-light" id="creative">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="section-heading text-uppercase">Creative Zone</h2>
+                        <a class="btn btn-primary btn-xl text-uppercase" href="scratch.html">HOBBIES</a>
+                    </div>
+                </div>
+    </section>
         <!-- About-->
         <section class="page-section" id="learn">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Learn More</h2>
-                    <h3 class="section-subheading text-muted">Lets Play a Game</h3>
-                    <a class="btn btn-primary btn-xl text-uppercase" href="#services">Play</a>
-                </div>
-                
-            </div>
-                
-    </section>
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Learn More</h2>
+        <h3 class="section-subheading text-muted">Lets Play a Game</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Riddle Generator Section -->
+  <section class="page-section bg-light" id="riddle">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Riddle Generator</h2>
+        <div class="riddle-box">
+          <div id="riddle">Click the button for a riddle!</div>
+          <div id="answer"></div>
+          <button onclick="generateRiddle()">Get Riddle</button>
+        </div>
+        <a href="index.html">← Home</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const riddles = [
+      { q: "What has to be broken before you can use it?", a: "An egg." },
+      { q: "I speak without a mouth and hear without ears. What am I?", a: "An echo." },
+      { q: "What gets wetter as it dries?", a: "A towel." },
+      { q: "I have branches, but no fruit, trunk or leaves. What am I?", a: "A bank." },
+      { q: "What can't talk but will reply when spoken to?", a: "An echo." }
+    ];
+
+    function generateRiddle() {
+      const r = riddles[Math.floor(Math.random() * riddles.length)];
+      document.getElementById('riddle').textContent = r.q;
+      document.getElementById('answer').textContent = "Click again to reveal the answer...";
+      setTimeout(() => {
+        document.getElementById('answer').textContent = r.a;
+      }, 2500);
+    }
+  </script>
 <!-- Team-->
 <section class="page-section bg-light" id="team">
             <div class="container">
